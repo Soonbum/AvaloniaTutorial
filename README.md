@@ -79,7 +79,7 @@
     * ButtonSpinner: 화살표 2개가 표시되어 있는 컨트롤로서 값을 증감할 때 사용한다. (좌우 혹은 상하 화살표)
       - 예시: <img width="166" height="64" alt="image" src="https://github.com/user-attachments/assets/1d00f8db-db3b-4289-858a-2365ea485cde" />
 
-    * SplitButton: 콤보박스와 같은 기능을 하는 컨트롤이다. 텍스트뿐만 아니라 이미지 Picker 역할도 할 수 있다.
+    * SplitButton: 콤보박스와 비슷한 기능을 하는 컨트롤이다. 텍스트뿐만 아니라 이미지 Picker 역할도 할 수 있다.
       - 예시 1: <img width="153" height="123" alt="image" src="https://github.com/user-attachments/assets/43b3612a-7aad-481a-8335-401bdcb116ca" />
  
       - 예시 2: <img width="226" height="257" alt="image" src="https://github.com/user-attachments/assets/31af94ae-4e6c-4389-9d6c-4bd8ac44b666" />
@@ -89,41 +89,58 @@
     * ToggleSplitButton: SplitButton과 동일하나 ToggleButton처럼 Checked/Unchecked 상태가 추가되어 있다.
 
   - 반복된 데이터 표현
-    * DataGrid: 
+    * DataGrid: Windows Forms의 DataGridView와 같은 컨트롤이다. .cs 파일에서 List 객체와 연동시킬 수 있다.
+      - 예시: <img width="646" height="439" alt="image" src="https://github.com/user-attachments/assets/576e643a-a828-405e-a8f4-257629f401b7" />
 
-    * ItemsControl: 
+    * ItemsControl: 반복된 데이터를 표현하는 컨트롤 중 하나이다. ListBox, ComboBox, DataGrid가 이것을 상속 받았다.
+      - 예시: <img width="646" height="439" alt="image" src="https://github.com/user-attachments/assets/26e6e8ce-6cec-472c-a6bd-b4ea50680770" />
 
-    * ItemsRepeater: 
+    * ItemsRepeater: ItemsControl과 비슷하나 ScrollView, Layout을 직접 붙여야 한다. ItemsControl보다 가볍다. (항목 수량이 많을 때 권장함)
+      - 예시 1: <img width="640" height="439" alt="image" src="https://github.com/user-attachments/assets/678b23e4-203e-46d1-bd77-16302e3c9a5b" />
+ 
+      - 예시 2: <img width="646" height="439" alt="image" src="https://github.com/user-attachments/assets/64fcd71a-5e0a-4577-95d8-701aa075e472" />
 
-    * ListBox: 
+    * ListBox: Windows Forms의 리스트박스와 같은 기능을 하는 컨트롤이다.
+      - 예시: <img width="640" height="439" alt="image" src="https://github.com/user-attachments/assets/f146c371-6cb8-4b39-bd84-4aaa2378e56d" />
 
-    * ComboBox: 
+    * ComboBox: Windows Forms의 콤보박스와 같은 기능을 하는 컨트롤이다.
+      - 예시: <img width="640" height="439" alt="image" src="https://github.com/user-attachments/assets/4a98461d-d7c9-4236-9084-e48625fe8ad2" />
     
   - 텍스트 편집/표시
-    * AutoCompleteBox: 
+    * AutoCompleteBox: 텍스트박스에 자동 완성이 추가된 컨트롤이다.
 
-    * TextBlock: 
+    * TextBlock: Windows Forms의 Label과 같은 역할을 하는 컨트롤이다. 텍스트 표시만 하고 편집은 불가능하다.
+      - 예시: <img width="655" height="426" alt="image" src="https://github.com/user-attachments/assets/af200fc4-4bcd-4d2d-bb48-2c7847840500" />
 
-    * TextBox: 
+    * TextBox: 텍스트 입력을 받을 때 사용하는 컨트롤이다. 일반/암호 입력용으로 사용할 수 있고 싱글/멀티 라인도 표현할 수 있다.
+      - 예시: <img width="640" height="439" alt="image" src="https://github.com/user-attachments/assets/36031759-1525-47ce-ac49-471edc93a6aa" />
 
-    * SelectableTextBlock: 
+    * SelectableTextBlock: TextBlock과 비슷하나 텍스트를 선택/복사할 수 있다.
+      - 예시: <img width="655" height="426" alt="image" src="https://github.com/user-attachments/assets/7a1474ac-3291-4e06-b03a-042ab461db39" />
 
-    * MaskedTextBox: 
+    * MaskedTextBox: TextBox와 비슷하나 특정 포맷으로만 입력할 수 있게 해준다. (예: 전화번호 등)
+      - 예시: <img width="640" height="439" alt="image" src="https://github.com/user-attachments/assets/15fb1a31-c9bf-467b-900a-45f2adeb3a7a" />
 
   - 값 선택
-    * CheckBox: 
+    * CheckBox: Windows Forms의 체크박스와 같은 기능을 하는 컨트롤이다. (3가지 상태를 표현할 수도 있다: Checked/Unchecked/Unknown)
+      - 예시: <img width="631" height="393" alt="image" src="https://github.com/user-attachments/assets/24963602-0939-46c2-93af-abab3dcb86fd" />
 
-    * Slider: 
+    * Slider: 슬라이더 컨트롤
+      - 예시: <img width="631" height="393" alt="image" src="https://github.com/user-attachments/assets/a9790683-a254-4018-8589-21acc6b27801" />
 
-    * Calendar: 
+    * Calendar: 캘린더 컨트롤
+      - 예시: <img width="638" height="447" alt="image" src="https://github.com/user-attachments/assets/125e9fe6-cc3a-4a58-8273-854ccfcc3bbe" />
 
-    * CalendarDatePicker: 
+    * CalendarDatePicker: 날짜를 선택할 때 사용하는 컨트롤이다.
+      - 예시: <img width="638" height="447" alt="image" src="https://github.com/user-attachments/assets/11cebe05-f037-4dab-ab4e-bd8c453368c2" />
 
-    * ColorPicker: 
+    * ColorPicker: 컬러 피커 컨트롤
 
-    * DatePicker: 
+    * DatePicker: 날짜 선택 컨트롤이며 CalendarDatePicker와 스타일이 약간 다르다.
+      - 예시: <img width="638" height="447" alt="image" src="https://github.com/user-attachments/assets/93caf2fc-6b16-4c27-82f5-eba6c08e19f0" />
 
-    * TimePicker: 
+    * TimePicker: 시간 선택 컨트롤
+      - 예시: <img width="638" height="447" alt="image" src="https://github.com/user-attachments/assets/6990c2fa-f099-4fb4-bf5d-4d90829582c8" />
 
   - 이미지 표시
     * Image: 
