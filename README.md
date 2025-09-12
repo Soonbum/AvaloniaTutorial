@@ -23,56 +23,113 @@
   - View: 사용자에게 보여주는 그래픽 인터페이스 부분, AXAML 문서로 작성함 (주의사항: 가급적 .axaml.cs 코드는 사용하지 말 것!)
   - ViewModel: Model과 View 사이의 중간자 역할로 Frontend와 Backend 양쪽으로부터 들어오는 요청을 대응함
 
-* 뷰의 구성요소: 컨트롤
+* 뷰의 구성요소: [컨트롤](https://docs.avaloniaui.net/docs/basics/user-interface/controls/builtin-controls)
   - 레이아웃
-    * Border: Child 요소의 경계/배경을 꾸민다. 그 외 경계선 두께, 모서리 반지름, 그림자를 표현할 수 있다.
-    * Canvas: 
-    * Dock Panel
-    * Expander
-    * Grid
-    * Grid Splitter
-    * Panel
-    * Relative Panel
-    * Scroll Viewer
-    * Split View
-    * Stack Panel
-    * Tab Control
-    * Uniform Grid
-    * Wrap Panel
+    * Border: Child 컨트롤의 경계/배경을 꾸민다. 그 외 경계선 두께, 모서리 반지름, 그림자를 표현할 수 있다.
+      - 예시: <img width="529" height="146" alt="image" src="https://github.com/user-attachments/assets/0a5e2209-573a-475b-ab67-7147f8bf8e2e" />
+
+    * Canvas: Child 컨트롤을 좌표를 이용해 특정 위치에 표시한다. Z-index로 노출 순서를 제어할 수 있다. (좌상단이 원점이다. Border 바깥의 여백은 Margin, Border 내부의 여백은 Padding이라고 함)
+      - 예시: <img width="448" height="412" alt="image" src="https://github.com/user-attachments/assets/cd81e0b7-b30b-495b-a87a-e17249d9750b" />
+
+    * DockPanel: Child 컨트롤을 모서리에 도킹시킨다. (Top, Bottom, Left, Right)
+      - 예시: <img width="441" height="399" alt="image" src="https://github.com/user-attachments/assets/d3ed4bf9-e22a-439d-a006-6b00d0e9a693" />
+
+    * Expander: Expand/Collapse 기능으로 Child 컨트롤을 보여주거나 숨길 수 있다.
+      - 예시: <img width="563" height="258" alt="image" src="https://github.com/user-attachments/assets/e5c5d30b-4351-4d06-9e5e-9dbdd7002e72" />
+
+    * Grid: Child 요소들을 column, row 번호로 정렬한다. (절대값, 상대값, 자동크기 가능) Child 요소들은 0-기반 인덱스로 어떤 셀에 위치할지 지정한다. (만약 여러 컨트롤을 한 셀 안에 넣으려면 Panel 태그 등으로 감싸면 됨)
+      - 예시: <img width="802" height="482" alt="image" src="https://github.com/user-attachments/assets/5dd4113f-b50e-485a-adf2-5d516097c563" />
+
+    * GridSplitter: 사용자가 Grid를 실시간으로 리사이즈할 수 있게 해준다. Grid 태그 안에 들어가야 한다.
+      - 예시: <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/53c0c433-81bb-49ea-8598-68f783b6a707" />
+
+    * Panel: 여러 Child 컨트롤을 품어주는 역할을 한다. 수평/수직 크기로 전체 크기를 지정할 수 있다.
+      - 예시: <img width="327" height="329" alt="image" src="https://github.com/user-attachments/assets/b882064b-d348-4e22-a06a-2b372580b46b" />
+
+    * RelativePanel: Panel과 비슷하나 Child 컨트롤들이 서로 정렬할 수 있게 해준다.
+      - 예시: <img width="338" height="334" alt="image" src="https://github.com/user-attachments/assets/ccafaf9d-2ef8-4ed6-8057-d650324fac3e" />
+
+    * ScrollViewer: 작은 공간 안에서 잘린 Child 요소들을 스크롤 바를 움직여 볼 수 있게 해준다. (단, ScrollViewer, DataGrid, ListBox, TextBox, TreeView는 자체 스크롤 바가 있으므로 연쇄 스크롤 바를 On/Off 할 수 있음)
+      - 예시: <img width="458" height="343" alt="image" src="https://github.com/user-attachments/assets/122d372a-b691-44eb-99f8-b4ff2a39b177" />
+
+    * SplitView: 메인 컨텐트와 측면 Pane으로 나누어서 보여준다. 측면 Pane은 평소 숨겨져 있고 일시적으로 펼칠 수 있다.
+      - 예시: <img width="892" height="517" alt="image" src="https://github.com/user-attachments/assets/caa20252-71e8-4e24-832d-06ed31c68f89" />
+
+    * StackPanel: 여러 Child 컨트롤들을 수평 혹은 수직 방향으로 정렬한다.
+      - 예시: <img width="230" height="282" alt="image" src="https://github.com/user-attachments/assets/e9c7f92e-76f5-459b-bb63-542f385778f6" />
+
+    * TabControl: 내부에 TabItem 태그를 넣어서 컨텐트 공간을 나눌 수 있다.
+      - 예시: <img width="638" height="447" alt="image" src="https://github.com/user-attachments/assets/d2be82c3-f321-4aab-9f7f-c92f1fefce76" />
+
+    * UniformGrid: Grid와 비슷하나 내부 공간이 균일하게 나눠져 있다.
+      - 예시: <img width="344" height="243" alt="image" src="https://github.com/user-attachments/assets/dd3fc463-2227-4092-a1c6-2bdff78028c3" />
+
+    * WrapPanel: 여러 Child 컨트롤들을 수평 혹은 수직 방향으로 이어서 배치한다.
+      - 예시: <img width="506" height="456" alt="image" src="https://github.com/user-attachments/assets/f838222e-bef6-490e-b9a5-10e552fbee8e" />
+
   - 버튼
     * Button
+
     * RepeatButton
+
     * RadioButton
+
     * ToggleButton
+
     * ButtonSpinner
+
     * SplitButton
+
     * ToggleSplitButton
+
   - 반복된 데이터 표현
     * DataGrid
+
     * ItemsControl
+
     * ItemsRepeater
+
     * ListBox
+
     * ComboBox
+    
   - 텍스트 편집/표시
     * AutoCompleteBox
+
     * TextBlock
+
     * TextBox
+
     * SelectableTextBlock
+
     * MaskedTextBox
+
   - 값 선택
     * CheckBox
+
     * Slider
+
     * Calendar
+
     * CalendarDatePicker
+
     * ColorPicker
+
     * DatePicker
+
     * TimePicker
+
   - 이미지 표시
     * Image
+
     * PathIcon
+
   - 메뉴/팝업
     * Menu
+
     * Flyouts
+
     * ToolTip
 
-* ?
+* 뷰를 작성하는 요령
+  - ???
