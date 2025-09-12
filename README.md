@@ -143,16 +143,17 @@
       - 예시: <img width="638" height="447" alt="image" src="https://github.com/user-attachments/assets/6990c2fa-f099-4fb4-bf5d-4d90829582c8" />
 
   - 이미지 표시
-    * Image: 
+    * Image: Raster 이미지를 표현하는 컨트롤이다. (문자열로 이미지 경로를 지정하거나, 파일 혹은 메모리 스트림으로부터 Bitmap을 로드할 수 있음)
 
-    * PathIcon: 
+    * PathIcon: 아이콘 표현을 위한 컨트롤이다.
 
   - 메뉴/팝업
-    * Menu: 
+    * Menu: 메뉴를 구성하기 위한 컨트롤이다. Menu 태그 밑에 MenuItem을 다단계로 nesting하여 구현할 수 있다.
+      - 예시: <img width="646" height="439" alt="image" src="https://github.com/user-attachments/assets/c1e907ea-3ba1-4d13-934c-b767afa4d161" />
 
-    * Flyouts: 
+    * Flyouts: Tooltip 컨트롤과 달리 특정 이벤트에 의해 나타나게 할 수 있으며 텍스트 외에도 여러 가지 컨트롤을 표시할 수 있다. 주로 무엇을 해야 할지 제시할 때 사용한다.
 
-    * ToolTip: 
+    * ToolTip: 사용자가 컨트롤 위에 마우스 포인터를 올려놓았을 때 잠시 나타나는 임시 텍스트이다. 주로 힌트를 보여줄 때 사용한다.
 
 * 뷰를 작성하는 요령
   - ???
