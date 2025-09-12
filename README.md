@@ -155,5 +155,24 @@
 
     * ToolTip: 사용자가 컨트롤 위에 마우스 포인터를 올려놓았을 때 잠시 나타나는 임시 텍스트이다. 주로 힌트를 보여줄 때 사용한다.
 
-* 뷰를 작성하는 요령
-  - ???
+* 스타일
+  - Avalonia의 스타일 설정 방식은 WPF/UWP 스타일보다는 CSS 스타일에 가깝다.
+  - 예시 코드
+    ```axaml
+    <Window ... >
+        <Window.Styles>
+            <Style Selector="TextBlock.h1">
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Style>
+        </Window.Styles>
+        <StackPanel Margin="20">
+           <TextBlock Classes="h1">Heading 1</TextBlock>
+        </StackPanel>
+    </Window>    
+    ```
+  - 예시 이미지: <img width="437" height="134" alt="image" src="https://github.com/user-attachments/assets/db06e2ac-da66-485d-9970-1810bad40384" />
+  - 또한, Theme 설정도 가능하다.
+    * 예시 1: <img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/e1d55c78-9899-4bbf-bab5-8a69f660c4a0" />
+    * 예시 2: <img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/d5d038f2-54af-4bb9-8f7b-ecab35145e0e" />
+    * 예시 3: <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/5d1d0052-744e-4afc-9b20-ff9888993162" />
