@@ -1,5 +1,8 @@
 # Avalonia 개발환경 구축
 
+* 본 문서는 Avalonia 공식 문서에서 참조하였습니다.
+  - [Avalonia Docs](https://docs.avaloniaui.net/docs/welcome)
+
 * 설치 방법
   - Windows의 경우: Microsoft Visual Studio 2022 > 확장 > 확장 관리 > 찾아보기 해서 다음을 설치할 것
     * Avalonia for Visual Studio 2022
