@@ -68,68 +68,74 @@
       - 예시: <img width="506" height="456" alt="image" src="https://github.com/user-attachments/assets/f838222e-bef6-490e-b9a5-10e552fbee8e" />
 
   - 버튼
-    * Button
+    * Button: 말 그대로 버튼이다. Click 이벤트를 처리할 수 있다.
 
-    * RepeatButton
+    * RepeatButton: 일반 버튼과 달리 꾹 누르면 연속 Click 이벤트를 발생시킬 수 있다. (Delay, Interval 프로퍼티 있음)
 
-    * RadioButton
+    * RadioButton: 한 그룹 안에서 하나만 선택해야 할 때 사용하는 버튼이다.
 
-    * ToggleButton
+    * ToggleButton: 토글 버튼으로 눌려 있거나 안 눌려 있음을 표현할 수 있다.
 
-    * ButtonSpinner
+    * ButtonSpinner: 화살표 2개가 표시되어 있는 컨트롤로서 값을 증감할 때 사용한다. (좌우 혹은 상하 화살표)
+      - 예시: <img width="166" height="64" alt="image" src="https://github.com/user-attachments/assets/1d00f8db-db3b-4289-858a-2365ea485cde" />
 
-    * SplitButton
+    * SplitButton: 콤보박스와 같은 기능을 하는 컨트롤이다. 텍스트뿐만 아니라 이미지 Picker 역할도 할 수 있다.
+      - 예시 1: <img width="153" height="123" alt="image" src="https://github.com/user-attachments/assets/43b3612a-7aad-481a-8335-401bdcb116ca" />
+ 
+      - 예시 2: <img width="226" height="257" alt="image" src="https://github.com/user-attachments/assets/31af94ae-4e6c-4389-9d6c-4bd8ac44b666" />
+ 
+      - 예시 3: <img width="282" height="66" alt="image" src="https://github.com/user-attachments/assets/44f97fdf-6455-4b26-a885-dd2fe63619dd" />
 
-    * ToggleSplitButton
+    * ToggleSplitButton: SplitButton과 동일하나 ToggleButton처럼 Checked/Unchecked 상태가 추가되어 있다.
 
   - 반복된 데이터 표현
-    * DataGrid
+    * DataGrid: 
 
-    * ItemsControl
+    * ItemsControl: 
 
-    * ItemsRepeater
+    * ItemsRepeater: 
 
-    * ListBox
+    * ListBox: 
 
-    * ComboBox
+    * ComboBox: 
     
   - 텍스트 편집/표시
-    * AutoCompleteBox
+    * AutoCompleteBox: 
 
-    * TextBlock
+    * TextBlock: 
 
-    * TextBox
+    * TextBox: 
 
-    * SelectableTextBlock
+    * SelectableTextBlock: 
 
-    * MaskedTextBox
+    * MaskedTextBox: 
 
   - 값 선택
-    * CheckBox
+    * CheckBox: 
 
-    * Slider
+    * Slider: 
 
-    * Calendar
+    * Calendar: 
 
-    * CalendarDatePicker
+    * CalendarDatePicker: 
 
-    * ColorPicker
+    * ColorPicker: 
 
-    * DatePicker
+    * DatePicker: 
 
-    * TimePicker
+    * TimePicker: 
 
   - 이미지 표시
-    * Image
+    * Image: 
 
-    * PathIcon
+    * PathIcon: 
 
   - 메뉴/팝업
-    * Menu
+    * Menu: 
 
-    * Flyouts
+    * Flyouts: 
 
-    * ToolTip
+    * ToolTip: 
 
 * 뷰를 작성하는 요령
   - ???
