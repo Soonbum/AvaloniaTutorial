@@ -176,3 +176,14 @@
     * 예시 1: <img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/e1d55c78-9899-4bbf-bab5-8a69f660c4a0" />
     * 예시 2: <img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/d5d038f2-54af-4bb9-8f7b-ecab35145e0e" />
     * 예시 3: <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/5d1d0052-744e-4afc-9b20-ff9888993162" />
+
+* [데이터 바인딩](https://docs.avaloniaui.net/docs/basics/data/data-binding/data-binding-syntax)
+  - AXAML로 작성된 코드에서 실제로 작동하는 .cs 파일의 변수를 연결시킬 수 있다. (변수 값이 바뀌면 뷰 내의 값도 자동으로 업데이트 됨)
+  - 데이터 바인딩 문법: `<SomeControl SomeProperty="{Binding Path, Mode=ModeValue, StringFormat=Pattern}" />`
+    * Binding: Path는 ㄷㅇ변수 이름으로 설정하면 된다.
+    * Mode
+      - OneWay: 변수 값 --> 뷰로 업데이트 (예: TextBlock.Text 프로퍼티)
+      - TwoWay: 변수 값 <--> 뷰로 업데이트 (예: TextBox.Text 프로퍼티)
+      - OneTime: OneWay와 동일하나 1번만 업데이트됨
+      - OneWayToSource: OneWay의 반대 방향으로 업데이트됨
+
