@@ -185,7 +185,7 @@
 * [데이터 바인딩](https://docs.avaloniaui.net/docs/basics/data/data-binding/data-binding-syntax)
   - AXAML로 작성된 코드에서 실제로 작동하는 .cs 파일의 변수를 연결시킬 수 있다. (변수 값이 바뀌면 뷰 내의 값도 자동으로 업데이트 됨)
   - 데이터 바인딩 문법: `<SomeControl SomeProperty="{Binding Path, Mode=ModeValue, StringFormat=Pattern}" />`
-    * Binding: Path는 ㄷㅇ변수 이름으로 설정하면 된다.
+    * Binding: Path는 변수 이름으로 설정하면 된다.
     * Mode
       - OneWay: 변수 값 --> 뷰로 업데이트 (예: TextBlock.Text 프로퍼티)
       - TwoWay: 변수 값 <--> 뷰로 업데이트 (예: TextBox.Text 프로퍼티)
