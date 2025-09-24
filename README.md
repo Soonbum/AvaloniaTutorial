@@ -185,10 +185,39 @@
 * [데이터 바인딩](https://docs.avaloniaui.net/docs/basics/data/data-binding/data-binding-syntax)
   - AXAML로 작성된 코드에서 실제로 작동하는 .cs 파일의 변수를 연결시킬 수 있다. (변수 값이 바뀌면 뷰 내의 값도 자동으로 업데이트 됨)
   - 데이터 바인딩 문법: `<SomeControl SomeProperty="{Binding Path, Mode=ModeValue, StringFormat=Pattern}" />`
-    * Binding: Path는 변수 이름으로 설정하면 된다.
+    * Path는 변수 이름으로 설정하면 된다. (`Binding` 또는 `Binding .`는 빈 경로를 의미함 / 다른 요소를 참조할 때에는 #을 앞에 붙이면 됨 / $parent로 부모 요소를 참조할 수 있음)
     * Mode
       - OneWay: 변수 값 --> 뷰로 업데이트 (예: TextBlock.Text 프로퍼티)
       - TwoWay: 변수 값 <--> 뷰로 업데이트 (예: TextBox.Text 프로퍼티)
       - OneTime: OneWay와 동일하나 1번만 업데이트됨
       - OneWayToSource: OneWay의 반대 방향으로 업데이트됨
+    * Source: Path에 대한 루트 객체를 명시함 (기본적으로 DataContext)
+    * StringFormat: OneWay 바이딩에 한해 정규표현식을 이용하여 문자열 포맷을 지정할 수 있음
+    * Priority: ...
+    * ElementName: ...
+    * RelativeSource: ...
+    * Converter: ...
+    * ConverterParameter: ...
+    * FallbackValue: ...
+    * TargetNullValue: ...
+    * UpdateSourceTrigger: ...
 
+* 데이터 템플릿: 요소를 조합하여 더욱 풍성하고 화려한 커스텀 요소를 만들 수 있다.
+  - 예제
+```axaml
+<ListBox ItemsSource="{Binding Items}">
+  <ListBox.ItemTemplate>
+    <DataTemplate>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Name}" />
+            <Image Source="{Binding ImageSource}" />
+        </StackPanel>
+    </DataTemplate>
+  </ListBox.ItemTemplate>
+</ListBox>
+```
+
+* 의존성 주입 (Dependency Injection, DI)
+  - ...
+
+...
