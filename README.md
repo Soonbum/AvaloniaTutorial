@@ -25,8 +25,8 @@
 
 * MVVM 패턴
   - Model: 데이터를 의미함 (자료형, 클래스, 이미지 등), C# 코드로 작성함
-  - View: 사용자에게 보여주는 그래픽 인터페이스 부분, AXAML 문서로 작성함 (주의사항: 가급적 .axaml.cs 코드는 사용하지 말 것!)
-  - ViewModel: Model과 View 사이의 중간자 역할로 Frontend와 Backend 양쪽으로부터 들어오는 요청을 대응함
+  - View: 사용자에게 보여주는 그래픽 인터페이스 부분, AXAML 문서로 작성함 (주의사항: 가급적 .axaml.cs 코드는 사용하지 말 것!) (Binding 키워드를 이용해 ViewModel에서 업데이트하는 프로퍼티를 연결함)
+  - ViewModel: Model과 View 사이의 중간자 역할로 Frontend와 Backend 양쪽으로부터 들어오는 요청을 대응함 (여기에 PropertyChanged 이벤트를 구현한 INotifyPropertyChanged 인터페이스를 구현하면 프로퍼티가 변경될 때마다 View가 자동으로 업데이트됨)
 
 * 뷰의 구성요소: [컨트롤](https://docs.avaloniaui.net/docs/basics/user-interface/controls/builtin-controls)
   - 레이아웃
