@@ -278,57 +278,58 @@
 * 기타
   - Avalonia에서는 GroupBox 요소가 내장되어 있지 않으므로 다음과 같이 정의하면 됨
   - 정의
-```axaml
-<Style Selector="HeaderedContentControl">
-    <Setter Property="Template">
-        <ControlTemplate>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+    ```axaml
+    <Style Selector="HeaderedContentControl">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
         
-                <!-- Header -->
-                <Border 
-                    ZIndex="1" 
-                    Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
-                    Padding="5,0,5,0" 
-                    Margin="5,0,0,0">
-                    <TextBlock 
-                        Text="{TemplateBinding Header}" 
-                        FontWeight="Bold"/>
-                </Border>
+                    <!-- Header -->
+                    <Border 
+                        ZIndex="1" 
+                        Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
+                        Padding="5,0,5,0" 
+                        Margin="5,0,0,0">
+                        <TextBlock 
+                            Text="{TemplateBinding Header}" 
+                            FontWeight="Bold"/>
+                    </Border>
         
-                <!-- Content Area -->
-                <Border 
-                    Grid.RowSpan="2" 
-                    Padding="0,5,0,0"
-                    Grid.ColumnSpan="2"
-                    CornerRadius="4"
-                    Margin="0,10,0,0"
-                    BorderBrush="{DynamicResource SystemControlForegroundBaseMediumBrush}"
-                    BorderThickness="1">
-                    <ContentPresenter 
-                        Name="PART_ContentPresenter"
-                        Padding="8"
-                        Content="{TemplateBinding Content}"/>
-                </Border>
-            </Grid>
-        </ControlTemplate>
-    </Setter>
-</Style>    
-```
+                    <!-- Content Area -->
+                    <Border 
+                        Grid.RowSpan="2" 
+                        Padding="0,5,0,0"
+                        Grid.ColumnSpan="2"
+                        CornerRadius="4"
+                        Margin="0,10,0,0"
+                        BorderBrush="{DynamicResource SystemControlForegroundBaseMediumBrush}"
+                        BorderThickness="1">
+                        <ContentPresenter 
+                            Name="PART_ContentPresenter"
+                            Padding="8"
+                            Content="{TemplateBinding Content}"/>
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>    
+    ```
   - 사용 예시
-```axaml
-<HeaderedContentControl Header="Settings">
-    <StackPanel Spacing="8">
-        <TextBox Text="Sample content"/>
-        <Button Content="Click me"/>
-    </StackPanel>
-</HeaderedContentControl>
-```
-...
+    ```axaml
+    <HeaderedContentControl Header="Settings">
+        <StackPanel Spacing="8">
+            <TextBox Text="Sample content"/>
+            <Button Content="Click me"/>
+        </StackPanel>
+    </HeaderedContentControl>
+    ```
+
+* ...
