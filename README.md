@@ -196,7 +196,50 @@
     * Priority: ...
     * ElementName: ...
     * RelativeSource: ...
-    * Converter: ...
+    * Converter: View와 ViewModel 간의 변환기 역할 (예를 들면, bool 값에 의한 Brushes의 컬러 설정)
+        ```C#
+        // Converters/BoolToBrushConverter.cs
+        using System;
+        using System.Globalization;
+        using Avalonia.Data.Converters;
+        using Avalonia.Media;
+
+        namespace YourApp.Converters;
+
+        public class BoolToBrushConverter : IValueConverter
+        {
+            // ViewModel의 값 -> View로 변환할 때 호출
+            public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+            {
+                if (value is bool isOnline)
+                {
+                    return isOnline ? Brushes.Green : Brushes.Gray;
+                }
+                return Brushes.Transparent; // 변환 실패 시
+            }
+
+            // View의 값 -> ViewModel로 변환할 때 호출 (단방향 바인딩에서는 거의 사용 안 함)
+            public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+            {
+                throw new NotImplementedException();
+            }
+        }
+        ```
+        ```axaml
+        // Views/MyView.axaml
+        <UserControl ...
+                     xmlns:converters="using:YourApp.Converters"> <UserControl.Resources>
+                <converters:BoolToBrushConverter x:Key="BoolToBrush"/>
+            </UserControl.Resources>
+
+            <!-- IsOnline이 true이면 Green 원, false이면 Gray 원이 표시됨 -->
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Ellipse Width="15" Height="15"
+                         Fill="{Binding IsOnline, Converter={StaticResource BoolToBrush}}"/>
+                <TextBlock Text="서버 상태"/>
+            </StackPanel>
+        </UserControl>
+        ```
     * ConverterParameter: ...
     * FallbackValue: ...
     * TargetNullValue: ...
