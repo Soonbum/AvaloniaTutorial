@@ -250,18 +250,18 @@
 
 * 데이터 템플릿: 요소를 조합하여 더욱 풍성하고 화려한 커스텀 요소를 만들 수 있다.
   - 예제
-```axaml
-<ListBox ItemsSource="{Binding Items}">
-  <ListBox.ItemTemplate>
-    <DataTemplate>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding Name}" />
-            <Image Source="{Binding ImageSource}" />
-        </StackPanel>
-    </DataTemplate>
-  </ListBox.ItemTemplate>
-</ListBox>
-```
+    ```axaml
+    <ListBox ItemsSource="{Binding Items}">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}" />
+                <Image Source="{Binding ImageSource}" />
+            </StackPanel>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    ```
   - [기본 DataTemplate 예제](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/BasicDataTemplateSample)
   - [FuncDataTemplate 예제](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/FuncDataTemplateSample)
   - [IDataTemplate 구현하기 예제](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample)
