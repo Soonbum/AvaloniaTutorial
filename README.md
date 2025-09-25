@@ -25,8 +25,11 @@
 
 * MVVM 패턴
   - Model: 데이터를 의미함 (자료형, 클래스, 이미지 등), C# 코드로 작성함
-  - View: 사용자에게 보여주는 그래픽 인터페이스 부분, AXAML 문서로 작성함 (주의사항: 가급적 .axaml.cs 코드는 사용하지 말 것!) (Binding 키워드를 이용해 ViewModel에서 업데이트하는 프로퍼티를 연결함)
-  - ViewModel: Model과 View 사이의 중간자 역할로 Frontend와 Backend 양쪽으로부터 들어오는 요청을 대응함 (여기에 PropertyChanged 이벤트를 구현한 INotifyPropertyChanged 인터페이스를 구현하면 프로퍼티가 변경될 때마다 View가 자동으로 업데이트됨)
+  - View: 사용자에게 보여주는 그래픽 인터페이스 부분, AXAML 문서로 작성함 (주의사항: 가급적 .axaml.cs 코드는 사용하지 말 것!)
+    * Binding 키워드를 이용해 ViewModel에서 업데이트하는 프로퍼티를 연결함
+  - ViewModel: Model과 View 사이의 중간자 역할로 Frontend와 Backend 양쪽으로부터 들어오는 요청을 대응함
+    * PropertyChanged 이벤트를 구현한 INotifyPropertyChanged 인터페이스를 구현하면 프로퍼티가 변경될 때마다 View가 자동으로 업데이트됨
+    * ICommand 인터페이스를 구현하면 함수를 실행할 수 있음
 
 * 뷰의 구성요소: [컨트롤](https://docs.avaloniaui.net/docs/basics/user-interface/controls/builtin-controls)
   - 레이아웃
@@ -259,8 +262,73 @@
   </ListBox.ItemTemplate>
 </ListBox>
 ```
+  - [기본 DataTemplate 예제](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/BasicDataTemplateSample)
+  - [FuncDataTemplate 예제](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/FuncDataTemplateSample)
+  - [IDataTemplate 구현하기 예제](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample)
 
 * 의존성 주입 (Dependency Injection, DI)
   - ...
 
+* [뷰 로케이터 (View Locator)](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Routing/BasicViewLocatorSample)
+  - 주어진 ViewModel의 올바른 시각적 표현을 선택하도록 도와주는 클래스 (마치 커스텀 DataTemplate처럼 보임, IDataTemplate 인터페이스 상속)
+
+* 연습 예제
+  - [ToDo List](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CompleteApps/SimpleToDoList)
+
+* 기타
+  - Avalonia에서는 GroupBox 요소가 내장되어 있지 않으므로 다음과 같이 정의하면 됨
+  - 정의
+```axaml
+<Style Selector="HeaderedContentControl">
+    <Setter Property="Template">
+        <ControlTemplate>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+        
+                <!-- Header -->
+                <Border 
+                    ZIndex="1" 
+                    Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
+                    Padding="5,0,5,0" 
+                    Margin="5,0,0,0">
+                    <TextBlock 
+                        Text="{TemplateBinding Header}" 
+                        FontWeight="Bold"/>
+                </Border>
+        
+                <!-- Content Area -->
+                <Border 
+                    Grid.RowSpan="2" 
+                    Padding="0,5,0,0"
+                    Grid.ColumnSpan="2"
+                    CornerRadius="4"
+                    Margin="0,10,0,0"
+                    BorderBrush="{DynamicResource SystemControlForegroundBaseMediumBrush}"
+                    BorderThickness="1">
+                    <ContentPresenter 
+                        Name="PART_ContentPresenter"
+                        Padding="8"
+                        Content="{TemplateBinding Content}"/>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </Setter>
+</Style>    
+```
+  - 사용 예시
+```axaml
+<HeaderedContentControl Header="Settings">
+    <StackPanel Spacing="8">
+        <TextBox Text="Sample content"/>
+        <Button Content="Click me"/>
+    </StackPanel>
+</HeaderedContentControl>
+```
 ...
